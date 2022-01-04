@@ -6,13 +6,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<style>
-a {
-	color:#ffffff;
-	text-decoration:none;
-	padding-right:2rem;
-}
-</style>
 <body>
 	&nbsp;
 	<a href="memberWrite.jsp">회원등록</a>

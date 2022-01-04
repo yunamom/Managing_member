@@ -6,37 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<style>
-body {
-	font-size:12px; color:#333333;
-	font-family:맑은 고딕; 
-}
-a {
-	color:#ffffff;
-	text-decoration:none;
-	padding-right:2rem;
-}
-header {
-	text-align:center;
-	padding-top:0.3rem;
-	padding-bottom:0.3rem;
-	color:#ffffff; background-color:#dedede;
-}
-nav {
-	text-align:left;
-	padding-top:0.3rem;
-    padding-bottom:0.3rem; 
-	color:#ffffff; background-color:#555555;	
-}
-section {
-	height:450px;
-	background-color:#EAD5D5;
-}
-footer {
-	text-align:center;	
-	color:#ffffff; background-color:#cccccc;
-}
-</style>
+<link rel="stylesheet" href="main.css">
 <body>
 <div>
 	<header>
