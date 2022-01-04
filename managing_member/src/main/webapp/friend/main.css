@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+body {
+	font-size:12px; color:#333333;
+	font-family:맑은 고딕; 
+}
+
+header {
+	text-align:center;
+	padding-top:0.3rem;
+	padding-bottom:0.3rem;
+	color:#ffffff; background-color:#dedede;
+}
+a {
+	color:#ffffff;
+	text-decoration:none;
+	padding-right:2rem;
+}
+nav {
+	text-align:left;
+	padding-top:0.3rem;
+    padding-bottom:0.3rem; 
+	color:#ffffff; background-color:#555555;	
+}
+section {
+	height:450px;
+	background-color:#EAD5D5;
+}
+footer {
+	text-align:center;	
+	color:#ffffff; background-color:#cccccc;
+}
