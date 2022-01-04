@@ -8,13 +8,13 @@
 </head>
 <style>
 body {
-	width:100%;
-	font-size:12px; color:#555555;
-	font-family:맑은 고딕; background-color:#EAD5D5;
+	font-size:12px; color:#333333;
+	font-family:맑은 고딕; 
 }
 a {
 	color:#ffffff;
 	text-decoration:none;
+	padding-right:2rem;
 }
 header {
 	text-align:center;
@@ -30,6 +30,7 @@ nav {
 }
 section {
 	height:450px;
+	background-color:#EAD5D5;
 }
 footer {
 	text-align:center;	
@@ -42,13 +43,27 @@ footer {
 		<h1>친구관리</h1>
 	</header>
 	<nav>
+	&nbsp;
 	<a href="memberWrite.jsp">회원등록</a>
 	<a href="memberList.jsp">회원목록조회/수정</a>
 	<a href="frinedList.jsp">친구현황조회</a>
 	<a href="index.jsp">홈으로</a>
 	</nav>
 	<section>
-		<h2 align=center>친구관리 프로그램</h2>
+		<br>
+		<h2 align="center">친구관리 프로그램</h2>
+		<div>
+			<h4>&nbsp;SNS에서 회원정보, 친구정보 데이터베이스를 구축하고 친구관리를 위한 프로그램을 작성한다.
+			<br>
+			&nbsp;프로그램 작성 순서 </h4>
+			<ol>
+				<li>회원정보 테이블을 생성한다.</li>
+				<li>친구정보 테이블을 생성한다.</li>
+				<li>회원정보 입력 프로그램을 작성한다.</li>
+				<li>회원정보 조회/수정 프로그램을 작성한다.</li>
+				<li>친구정보 조회 프로그램을 작성한다.</li>
+			</ol>
+		</div>
 	</section>
 	<footer>
 	HRDKOREA Copyright@2016
