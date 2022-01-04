@@ -43,11 +43,7 @@ footer {
 		<h1>친구관리</h1>
 	</header>
 	<nav>
-	&nbsp;
-	<a href="memberWrite.jsp">회원등록</a>
-	<a href="memberList.jsp">회원목록조회/수정</a>
-	<a href="frinedList.jsp">친구현황조회</a>
-	<a href="index.jsp">홈으로</a>
+	<%@ include file="topMenu.jsp" %>
 	</nav>
 	<section>
 		<br>
