@@ -1,18 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
-<%
-String url = "jdbc:mysql://localhost:3306/apple?useUnicode=true&characterEncoding=utf8";
-String username = "root";
-String userpass = "root";
-//접속드라이버 연결
-Class.forName("com.mysql.jdbc.Driver");
-//접속정보 세팅
-Connection conn = DriverManager.getConnection(url,username,userpass);
-//접속한 MySQL의 SQL실행 결과를 위한 메모리 공간 확보
-Statement stmt = conn.createStatement(); //인스턴스화(객체화==메모리에올림)
 
+<%@ include file="database.jsp" %>
+<%
 String sql = "select max(member_no)+1 myno from member_tbl";
 ResultSet rs = stmt.executeQuery(sql);
 rs.next();
@@ -47,7 +38,6 @@ function fn_submit(){
 	}
 	document.frm.submit();
 }
-
 </script>
 <link rel="stylesheet" href="main.css">
 <body>
@@ -79,10 +69,11 @@ function fn_submit(){
 			<tr>
 				<th>등급</th>
 				<td>
-					<select name="grade" multiple>
-						<option>특별회원</option>
-						<option>우수회원</option>
-						<option>일반회원</option>
+					<!-- multiple 속성은 다중선택 -->
+					<select name="grade" size="3">
+						<option value="S">특별회원</option>
+						<option value="A">우수회원</option>
+						<option value="B">일반회원</option>
 					</select>
 				</td>
 			</tr>
