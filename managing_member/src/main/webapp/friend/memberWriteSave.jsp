@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
-    
+    pageEncoding="UTF-8"%>  
 <%@ include file="database.jsp" %>
 
 <%
@@ -24,12 +22,23 @@ if(no == null || id == null || name == null ||
 <%
 	return; // jsp 종료
 }
+//grade 가 null 일때 오류가 생겨서 수정함.
+String sql="INSERT INTO member_tbl";
+sql+="(member_no,member_id,member_name,member_grade,member_hobby,member_date)";
+sql+="VALUES (?,?,?,?,?,?)";
 
-String sql = "INSERT INTO member_tbl";
-sql+= "(member_no,member_id,member_name,member_grade,member_hobby,member_date)";
-sql+= "VALUES('"+no+"','"+id+"','"+name+"','"+grade+"','"+hobby+"','"+date+"')";
-int result = stmt.executeUpdate(sql);
+PreparedStatement pstmt = conn.prepareStatement(sql);
 
+pstmt.setString(1, no);
+//Similarly for the remaining 5
+pstmt.setString(2, id);
+pstmt.setString(3, name);
+pstmt.setString(4, grade);
+pstmt.setString(5, hobby);
+pstmt.setString(6, date);
+
+//And then do an executeUpdate
+int result=pstmt.executeUpdate();
 if(result == 1){
 %>
 	<script>
