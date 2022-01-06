@@ -7,11 +7,21 @@ String no = request.getParameter("no");
 String id = request.getParameter("id");
 String name = request.getParameter("name");
 String grade = request.getParameter("grade");
-String hobby = request.getParameter("hobby");
+String []h = request.getParameterValues("hobby");
+//동일이름 즉 checkbox 와 같은 html 요소가 넘어오는 경우에는 배열형태로 받아야한다.
 String date = request.getParameter("date");
 %>
 
 <%
+String hobby=null; //변수생성
+
+if(h != null){	
+	for(int i=0; i<h.length; i++){
+		hobby+=h[i]+",";
+	}
+hobby=hobby.substring(0,hobby.length()-1);
+}
+
 if(no == null || id == null || name == null ||
 	no.equals("") || id.equals("") || name.equals("")) {
 %>
