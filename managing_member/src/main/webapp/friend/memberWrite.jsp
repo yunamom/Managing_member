@@ -60,7 +60,7 @@ function fn_submit(){
 			</tr>
 			<tr>
 				<th>회원ID</th>
-				<td><input type="text" name="id"></td>
+				<td><input type="text" name="id" required></td>
 			</tr>
 			<tr>
 				<th>이름</th>
