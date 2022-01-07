@@ -6,14 +6,17 @@ String sql =" SELECT ";
 	   sql+=" member_no no,";
 	   sql+=" member_id id,";
 	   sql+=" member_name name,";
-	   sql+=" member_grade grade,";
-	   sql+=" member_hobby hobby,";
-	   sql+=" date_format(member_date, '%Y.%m.%d') date";
+	   
+	   sql+=" if(member_grade='S','특별',if(member_grade='A','우수','일반'))grade,";
+	   
+	   sql+=" ifnull(member_hobby,' ') hobby,";
+	   sql+=" date_format(member_date, '%Y%m.%d') date";
 	   sql+=" FROM ";
 	   sql+="member_tbl";
 	   sql += " ORDER BY member_id ASC";
 	  
 ResultSet rs = stmt.executeQuery(sql);
+
 %>
     
 <!DOCTYPE html>
