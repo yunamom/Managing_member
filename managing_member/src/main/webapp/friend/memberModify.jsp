@@ -87,9 +87,12 @@ function fn_submit(){
 	</nav>
 	<section>
 		<br>
-		<h2 align="center">친구 등록</h2>
+		<h2 align="center">친구(회원)수정 화면</h2>
 		<div>
 		<form name="frm" method="post" action="memberModifySave.jsp">
+		<!-- hidden type은 눈에보이지않지만 값을 전달한다. -->
+		<input type="hidden" name="no" value="<%=no %>">
+		
 		<table border="1" width="600" align="center">
 			<tr>
 				<th>회원번호</th>
@@ -108,18 +111,21 @@ function fn_submit(){
 				<td>
 					<!-- multiple 속성은 다중선택 -->
 					<select name="grade" size="3">
-						<option value="S">특별회원</option>
-						<option value="A">우수회원</option>
-						<option value="B">일반회원</option>
+						<option value="S" <%if(grade.equals("S")) out.print("selected");%>>특별회원</option>
+						<option value="A" <%if(grade.equals("A")) out.print("selected");%>>우수회원</option>
+						<option value="B" <%if(grade.equals("B")) out.print("selected");%>>일반회원</option>
 					</select>
 				</td>
 			</tr>
 			<tr>
 				<th>취미</th>
 				<td>
-					<input type="checkbox" name="hobby" value="독서"> 독서
-					<input type="checkbox" name="hobby" value="운동"> 운동
-					<input type="checkbox" name="hobby" value="영화"> 영화
+					<input type="checkbox" name="hobby" value="독서" 
+					<%if(hobby!=null && hobby.indexOf("독서") > -1) out.print("checked");%>> 독서
+					<input type="checkbox" name="hobby" value="운동" 
+					<%if(hobby!=null && hobby.indexOf("운동") > -1) out.print("checked");%>> 운동
+					<input type="checkbox" name="hobby" value="영화" 
+					<%if(hobby!=null && hobby.indexOf("영화") > -1) out.print("checked");%>> 영화
 				</td>
 			</tr>
 			<tr>
@@ -128,8 +134,8 @@ function fn_submit(){
 			</tr>
 		</table>
 		<div style="text-align:center;width:100%;">
-			<button type="submit" onclick="fn_submit(); return false;">등록</button>
-			<button type="button" onclick="">조회</button>
+			<button type="submit" onclick="fn_submit(); return false;">수정</button>
+			<button type="button" onclick=" location='memberList.jsp' ">조회</button>
 		</div>
 		</form>
 		</div>
