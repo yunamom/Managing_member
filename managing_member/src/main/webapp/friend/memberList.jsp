@@ -32,6 +32,8 @@ ResultSet rs = stmt.executeQuery(sql);
 %>
     
 <!DOCTYPE html>
+
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -50,7 +52,7 @@ ResultSet rs = stmt.executeQuery(sql);
 		<br>
 		<h2 align="center">친구 조회/수정</h2>
 		<div>
-			<table align="center" border ="1" width=600px>
+			<table align="center" border ="1" width=700px>
 				<tr>
 					<th>회원번호</th>
 					<th>회원 ID</th>
@@ -79,7 +81,7 @@ ResultSet rs = stmt.executeQuery(sql);
 			%>
 				<tr align="center">
 					<td><%=no %></td>
-					<td><%=id %></td>
+					<td><a href="memberModify.jsp?no=<%=no%>"><%=id %></a></td>
 					<td><%=name %></td>
 					<td><%=grade %></td>
 					<td><%=hobby %></td>
