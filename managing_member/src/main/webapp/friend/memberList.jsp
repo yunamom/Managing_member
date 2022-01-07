@@ -71,9 +71,7 @@ ResultSet rs = stmt.executeQuery(sql);
 				String date = rs.getString("date");
 				
 				// S,A,B
-				if(grade.equals("S")) grade = "특별";
-				else if(grade.equals("A")) grade = "우수";
-				else grade = "일반";
+				if(grade==null) grade = "";
 				
 				if(hobby==null) hobby = "";
 				

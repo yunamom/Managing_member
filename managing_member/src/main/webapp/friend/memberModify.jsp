@@ -50,7 +50,7 @@ if( rs.next() ) {
 <%
 	return;
 }
-
+if(hobby==null) hobby="";
 %>
 <!DOCTYPE html>
 <html>
@@ -111,21 +111,24 @@ function fn_submit(){
 				<td>
 					<!-- multiple 속성은 다중선택 -->
 					<select name="grade" size="3">
-						<option value="S" <%if(grade.equals("S")) out.print("selected");%>>특별회원</option>
-						<option value="A" <%if(grade.equals("A")) out.print("selected");%>>우수회원</option>
-						<option value="B" <%if(grade.equals("B")) out.print("selected");%>>일반회원</option>
+						<option value="S" 
+						<%if(grade!=null && grade.equals("S")) out.print("selected");%>>특별회원</option>
+						<option value="A" 
+						<%if(grade!=null && grade.equals("A")) out.print("selected");%>>우수회원</option>
+						<option value="B" 
+						<%if(grade!=null && grade.equals("B")) out.print("selected");%>>일반회원</option>
 					</select>
 				</td>
 			</tr>
 			<tr>
 				<th>취미</th>
-				<td>
+				<td>	
 					<input type="checkbox" name="hobby" value="독서" 
-					<%if(hobby!=null && hobby.indexOf("독서") > -1) out.print("checked");%>> 독서
+					<%if(hobby!=null && hobby.indexOf("독서")>-1) out.print("checked");%>> 독서
 					<input type="checkbox" name="hobby" value="운동" 
-					<%if(hobby!=null && hobby.indexOf("운동") > -1) out.print("checked");%>> 운동
+					<%if(hobby!=null && hobby.indexOf("운동")>-1) out.print("checked");%>> 운동
 					<input type="checkbox" name="hobby" value="영화" 
-					<%if(hobby!=null && hobby.indexOf("영화") > -1) out.print("checked");%>> 영화
+					<%if(hobby!=null && hobby.indexOf("영화")>-1) out.print("checked");%>> 영화
 				</td>
 			</tr>
 			<tr>
