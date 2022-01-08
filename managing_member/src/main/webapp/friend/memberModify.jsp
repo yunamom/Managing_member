@@ -138,7 +138,7 @@ function fn_submit(){
 		</table>
 		<div style="text-align:center;width:100%;">
 			<button type="submit" onclick="fn_submit(); return false;">수정</button>
-			<button type="button" onclick= "location='friendList.jsp?no=<%=no%>'">조회</button>
+			<button type="button" onclick= "location='friendList.jsp?no=<%=no%>&&name=<%=name%>'">조회</button>
 		</div>
 		</form>
 		</div>

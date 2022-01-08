@@ -2,7 +2,31 @@
     pageEncoding="UTF-8"%>
 <%@ include file = "database.jsp" %>
 <%
+String member_name = request.getParameter("member_name"); //from friendSearch.jsp
 
+String myNo = request.getParameter("no"); //from memberModify.jsp 조회버튼
+String myName = request.getParameter("name"); //from memberModify.jsp 조회버튼
+
+String nameSearch="";
+if(member_name != null) { // friendSearch.jsp 에서 이름값이넘어온 경우 쿼리문을 이용해서 회원번호를 찾는다! 넘재밌당
+	try{
+		String sql = " SELECT ";
+			   sql+= " member_no FROM member_tbl WHERE member_name = '"+member_name+"' ";
+		ResultSet rs = stmt.executeQuery(sql);
+		rs.next();
+		myNo = rs.getString("member_no");
+		nameSearch = member_name;
+	}catch(Exception e){
+	%>
+	<script>
+		alert("존재하지 않는 회원입니다.");
+		history.back();
+	</script>
+	<%
+	}
+} else {
+	nameSearch = myName;
+}
 String sql = " SELECT ";
 	   sql+= " f.req_member_no req_no,";
 	   sql+= " f.res_member_no res_no,";
@@ -13,16 +37,12 @@ String sql = " SELECT ";
 	   sql+= " friend_tbl f, member_tbl m";
 	   sql+= " WHERE f.res_member_no = m.member_no";
 ResultSet rs = stmt.executeQuery(sql);
-
-String no = request.getParameter("no");
-if(no == null) no = "";
 %>
     
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 <link rel="stylesheet" href="main.css">
 <body>
@@ -35,7 +55,7 @@ if(no == null) no = "";
 	</nav>
 	<section>
 		<br>
-		<h2 align="center">친구현황조회<%=no %></h2>
+		<h2 align="center">[<%=nameSearch%>] 님의 친구현황</h2>
 		<div align="center">
 			<table  border ="1" width=700px>
 				<tr align="center">
@@ -50,18 +70,14 @@ if(no == null) no = "";
 					String id = rs.getString("id");
 					String name = rs.getString("name");
 					String date = rs.getString("date"); 
-					if(req_no.equals(no)){
-						cnt++;
+					if(req_no.equals(myNo)){ cnt++;
 					%>
 				<tr align="center">
 					<td><%= id%></td>
 					<td><%= name%></td>
 					<td><%= date%></td>
-				</tr>
-				
-				<%
-					}
-				%>
+				</tr>	
+				<%}%>
 				<%}%>
 			</table>
 			<p>친구 : <%=cnt %>명</p>
