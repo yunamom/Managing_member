@@ -72,7 +72,9 @@ ResultSet rs = stmt.executeQuery(sql);
 				
 				// S,A,B
 				if(grade==null) grade = "";
-				
+				if(grade.equals("S")) grade ="특별";
+				if(grade.equals("A")) grade ="우수";
+				if(grade.equals("B")) grade ="일반";
 				if(hobby==null) hobby = "";
 				
 				date = date.replace("-",".");

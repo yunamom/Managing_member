@@ -88,7 +88,7 @@ function fn_submit(){
 	<section>
 		<br>
 		<h2 align="center">친구(회원)수정 화면</h2>
-		<div>
+		<div>		
 		<form name="frm" method="post" action="memberModifySave.jsp">
 		<!-- hidden type은 눈에보이지않지만 값을 전달한다. -->
 		<input type="hidden" name="no" value="<%=no %>">
@@ -138,7 +138,7 @@ function fn_submit(){
 		</table>
 		<div style="text-align:center;width:100%;">
 			<button type="submit" onclick="fn_submit(); return false;">수정</button>
-			<button type="button" onclick=" location='memberList.jsp' ">조회</button>
+			<button type="button" onclick= "location='friendList.jsp?no=<%=no%>'">조회</button>
 		</div>
 		</form>
 		</div>
