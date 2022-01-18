@@ -12,6 +12,8 @@
 
 7.친구조회 - friendList.jsp
 
+8.친구삭제 - delete.jsp
+
 *추가 (for include)
 
 8.database.jsp
