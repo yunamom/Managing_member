@@ -56,7 +56,7 @@ if(hobby==null) hobby="";
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>친구 수정</title>
 </head>
 <script>
 function fn_submit(){
@@ -79,36 +79,30 @@ function fn_submit(){
 <link rel="stylesheet" href="main.css">
 <body>
 <div>
-	<header>
-		<h1>친구관리</h1>
-	</header>
-	<nav>
 	<%@ include file= "topMenu.jsp" %>
-	</nav>
 	<section>
-		<br>
-		<h2 align="center">친구(회원)수정 화면</h2>
-		<div>		
+		<div class="box">		
+		<h3>친구(회원)수정 화면</h3>
 		<form name="frm" method="post" action="memberModifySave.jsp">
 		<!-- hidden type은 눈에보이지않지만 값을 전달한다. -->
 		<input type="hidden" name="no" value="<%=no %>">
 		
-		<table border="1" width="600" align="center">
+		<table width="500px">
 			<tr>
 				<th>회원번호</th>
 				<td><%=no%></td>
 			</tr>
 			<tr>
 				<th>회원ID</th>
-				<td><input type="text" name="id" required value="<%=id%>"></td>
+				<td align="left"><input type="text" name="id" required value="<%=id%>"></td>
 			</tr>
 			<tr>
 				<th>이름</th>
-				<td><input type="text" name="name" value="<%=name%>"></td>
+				<td align="left"><input type="text" name="name" value="<%=name%>"></td>
 			</tr>
 			<tr>
 				<th>등급</th>
-				<td>
+				<td align="left">
 					<!-- multiple 속성은 다중선택 -->
 					<select name="grade" size="3">
 						<option value="S" 
@@ -133,12 +127,12 @@ function fn_submit(){
 			</tr>
 			<tr>
 				<th>등록일자</th>
-				<td><input type="text" name="date" value="<%=date%>"></td>
+				<td align="left"><input type="text" name="date" value="<%=date%>"></td>
 			</tr>
 		</table>
 		<div style="text-align:center;width:100%;">
 			<button type="submit" onclick="fn_submit(); return false;">수정</button>
-			<button type="button" onclick= "location='friendList.jsp?no=<%=no%>&&name=<%=name%>'">조회</button>
+			<button type="button" onclick= "location='friendList.jsp?no=<%=no%>&&name=<%=name%>'">친구조회</button>
 		</div>
 		</form>
 		</div>

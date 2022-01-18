@@ -43,49 +43,41 @@ ResultSet rs = stmt.executeQuery(sql);
 <html>
 <head>
 <meta charset="UTF-8">
+<title>[<%=nameSearch%>] 님의 친구현황</title>
 </head>
 <link rel="stylesheet" href="main.css">
-<body>
-<div>
-	<header>
-		<h1>친구관리</h1>
-	</header>
-	<nav>
+<body>	
 	<%@ include file="topMenu.jsp" %>
-	</nav>
 	<section>
-		<br>
-		<h2 align="center">[<%=nameSearch%>] 님의 친구현황</h2>
-		<div align="center">
-			<table  border ="1" width=700px>
-				<tr align="center">
-					<th>회원ID</th>
-					<th>회원명</th>
-					<th>요청날짜</th>
-				</tr>
-				<%int cnt=0;
-				
-				  while(rs.next()) {
+	<div class="box">
+		<h3>[<%=nameSearch%>] 님의 친구현황</h3>
+		<table width="400px">
+			<tr align="center">
+				<th>회원ID</th>
+				<th>회원명</th>
+				<th>요청날짜</th>
+			</tr>
+			<%int cnt=0;	
+				 while(rs.next()) {
 					String req_no = rs.getString("req_no");
 					String id = rs.getString("id");
 					String name = rs.getString("name");
 					String date = rs.getString("date"); 
 					if(req_no.equals(myNo)){ cnt++;
 					%>
-				<tr align="center">
-					<td><%= id%></td>
-					<td><%= name%></td>
-					<td><%= date%></td>
-				</tr>	
+			<tr align="center">
+				<td><%= id%></td>
+				<td><%= name%></td>
+				<td><%= date%></td>
+			</tr>	
 				<%}%>
 				<%}%>
 			</table>
-			<p>친구 : <%=cnt %>명</p>
-		</div>
+		<p>친구 : <%=cnt %>명</p>
+	</div>
 	</section>
 	<footer>
 	HRDKOREA Copyright@2016
 	</footer>
-</div>
 </body>
 </html>

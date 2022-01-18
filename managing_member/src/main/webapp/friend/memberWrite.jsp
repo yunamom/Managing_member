@@ -19,7 +19,7 @@ String date = y+"/"+m+"/"+d;
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>친구등록</title>
 </head>
 <script>
 function fn_submit(){
@@ -41,36 +41,29 @@ function fn_submit(){
 </script>
 <link rel="stylesheet" href="main.css">
 <body>
-<div>
-	<header>
-		<h1>친구관리</h1>
-	</header>
-	<nav>
-	<%@ include file= "topMenu.jsp" %>
-	</nav>
+<%@ include file= "topMenu.jsp" %>
 	<section>
-		<br>
-		<h2 align="center">친구 등록</h2>
-		<div>
+	<div class="box">		
+		<h3 align="center">친구 등록</h3>
 		<form name="frm" method="post" action="memberWriteSave.jsp">
-		<table border="1" width="600" align="center">
+		<table width="500px">
 			<tr>
 				<th>회원번호</th>
-				<td><input type="text" name="no" value="<%=myno%>"></td>
+				<td align="left"><input type="text" name="no" value="<%=myno%>" readonly></td>
 			</tr>
 			<tr>
 				<th>회원ID</th>
-				<td><input type="text" name="id" required></td>
+				<td align="left"><input type="text" name="id" required></td>
 			</tr>
 			<tr>
 				<th>이름</th>
-				<td><input type="text" name="name"></td>
+				<td align="left"><input type="text" name="name"></td>
 			</tr>
 			<tr>
 				<th>등급</th>
-				<td>
+				<td align="left">
 					<!-- multiple 속성은 다중선택 -->
-					<select name="grade" size="3">
+					<select name="grade">
 						<option value="S">특별회원</option>
 						<option value="A">우수회원</option>
 						<option value="B">일반회원</option>
@@ -87,19 +80,16 @@ function fn_submit(){
 			</tr>
 			<tr>
 				<th>등록일자</th>
-				<td><input type="text" name="date" value="<%=date%>"></td>
+				<td align="left"><input type="text" name="date" value="<%=date%>"></td>
 			</tr>
 		</table>
-		<div style="text-align:center;width:100%;">
 			<button type="submit" onclick="fn_submit(); return false;">등록</button>
-			<button type="button" onclick="">조회</button>
-		</div>
+			<button type="button" onclick="location='memberList.jsp'">조회</button>
 		</form>
 		</div>
 	</section>
 	<footer>
 	HRDKOREA Copyright@2016
 	</footer>
-</div>
 </body>
 </html>

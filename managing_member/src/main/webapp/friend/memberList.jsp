@@ -25,7 +25,7 @@ String sql =" SELECT ";
 	   sql+=" member_date   date";
 	   sql+=" FROM ";
 	   sql+=" member_tbl";
-	   sql+=" ORDER BY member_id ASC";
+	   sql+=" ORDER BY member_no ASC";
 	  
 ResultSet rs = stmt.executeQuery(sql);
 
@@ -33,26 +33,18 @@ ResultSet rs = stmt.executeQuery(sql);
     
 <!DOCTYPE html>
 
-
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>친구 조회/수정</title>
 </head>
 <link rel="stylesheet" href="main.css">
 <body>
-<div>
-	<header>
-		<h1>친구관리</h1>
-	</header>
-	<nav>
 	<%@ include file="topMenu.jsp" %>
-	</nav>
 	<section>
-		<br>
-		<h2 align="center">친구 조회/수정</h2>
-		<div>
-			<table align="center" border ="1" width=700px>
+	<div class="box">
+	<h3>친구 조회/수정</h3>
+			<table width="700px">
 				<tr>
 					<th>회원번호</th>
 					<th>회원 ID</th>
@@ -60,6 +52,7 @@ ResultSet rs = stmt.executeQuery(sql);
 					<th>등급</th>
 					<th>취미</th>
 					<th>날짜</th>
+					<th>삭제</th>
 				</tr>
 			<%
 			while(rs.next()){
@@ -79,13 +72,14 @@ ResultSet rs = stmt.executeQuery(sql);
 				
 				date = date.replace("-",".");
 			%>
-				<tr align="center">
+				<tr>
 					<td><%=no %></td>
 					<td><a href="memberModify.jsp?no=<%=no%>"><%=id %></a></td>
 					<td><%=name %></td>
 					<td><%=grade %></td>
 					<td><%=hobby %></td>
-					<td><%=date %></td>					
+					<td><%=date %></td>	
+					<td><input type="button" onclick="location='delete.jsp?no=<%=no%>'" value="삭제"></td>			
 				</tr>
 			<%
 			}
@@ -96,6 +90,5 @@ ResultSet rs = stmt.executeQuery(sql);
 	<footer>
 	HRDKOREA Copyright@2016
 	</footer>
-</div>
 </body>
 </html>

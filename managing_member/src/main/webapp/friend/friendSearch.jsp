@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
+<title>친구현황조회</title>
+</head>
 	<script>
  	function check() {
  		if (f.member_name.value == "") {
@@ -16,20 +17,12 @@
  		f.submit();
  	}
 	</script>
-</head>
 <link rel="stylesheet" href="main.css">
 <body>
-<div>
-	<header>
-		<h1>친구관리</h1>
-	</header>
-	<nav>
 	<%@ include file="topMenu.jsp" %>
-	</nav>
-	<section align="center">
-		<br>
+	<section>
+		<div class="box">
 		<h2>친구현황조회</h2>
-		<div>
 			<form action="friendList.jsp" name="f" method="post"><br><br>
  				<p style=color:#ffffff; >이름을 입력하시면 해당 회원님의 친구를 검색합니다.</p>
  				<input type="text" value="" name="member_name" size="20" autofocus><br><br>
@@ -40,6 +33,5 @@
 	<footer>
 	HRDKOREA Copyright@2016
 	</footer>
-</div>
 </body>
 </html>

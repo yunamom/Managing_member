@@ -20,6 +20,7 @@ if(h != null){
 		hobby+=h[i]+",";
 	}
 hobby=hobby.substring(0,hobby.length()-1);
+hobby=hobby.replace("null", "");
 }
 
 if(no == null || id == null || name == null ||
